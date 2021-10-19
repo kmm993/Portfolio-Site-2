@@ -1,0 +1,40 @@
+:host {
+    display: flex;
+    height: 100%;
+
+    .close {
+        position: absolute;
+        top: -15px;
+        right: 5px;
+        font-size: 40px;
+        font-weight: bold;
+        cursor: pointer;
+    }
+}
+
+::ng-deep .dialog-image-panel .dialog-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    position: relative;
+
+    img {
+        width: auto;
+        height: auto;
+        display: block;
+        max-width: 95vh;
+        max-height: 90vh;
+    }
+
+    .image-container {
+        display: flex;
+        flex-direction: column;
+
+        .alt-text {
+            margin-top: 16px;
+            font-size: 22px;
+            font-weight: bold;
+        }
+    }
+}

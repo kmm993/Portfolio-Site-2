@@ -1,0 +1,8 @@
+<div mat-dialog-content class="dialog-content">
+    <span class="close" (click)="close()">&times;</span>
+
+    <div class="image-container">
+        <img [src]="this.data.image">
+        <span class="alt-text">{{ this.data.alt }}</span>
+    </div>
+</div>

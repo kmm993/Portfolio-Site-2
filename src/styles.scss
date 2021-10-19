@@ -8,13 +8,14 @@ body {
     font-size: 1.1em;
     line-height: 1.5;
     text-align: center;
+    width:100%;
 }
-
-/*img {
-    display: block;
-    width: 100%;
-    height: auto;
-}*/
+html{
+    width:100%;
+}
+*{
+    box-sizing:border-box;
+}
 
 h1, h2, h3, p {
     margin: 0;
@@ -139,35 +140,64 @@ header {
 /* about */
 
 .about-me {
-	margin: 100px 50px;
-	background-color: #0097C6; 
+	margin:10em 4em 4em 4em;
 	display: flex;
     flex-direction: row;
     flex-wrap: wrap;
     max-width:100%;
+    display:flex;
+    align-items: top;
+    justify-content: center;
 }
 .bio-pic {
     width:400px;
+    flex:1;
+}
+.bio-pic img{
+    max-width:100%;
+    min-width:280px;
 }
 .about-text {
     display:flex;
     flex-direction:column;
     padding: 0 0 0 30px;
     width:60%;
+    color: white;
+    flex:3;
+    text-align:left;
+}
+.about-text h1 {
+font-size: 35px;
 }
 
 @media only screen and (max-width: 767px) {
-	#about-me-box {
+	.about-me {
 		padding: 0 10px;
         flex-direction:column;
-        justify-items: center;	
+        align-items: center;
+        margin: 10em 0 0 0;	
 	}
+    .about-text {
+        margin:5em 0;
+        width:90%;
+        flex:1;
+        text-align:center;
+    }
+    .bio-pic img {
+        min-width: 280px;
+    }
+}
+.footer {
+    background-image: url("../src/assets/images/graphics/about_me.png"); 
+    position: absolute;
+    width:100%;
+    height: fit-content;
 }
 
 /* portfolio */
 
 .portfolio-body {
-margin:2em 20px;
+margin:20px;
 padding: 0;
 text-align:center;
 }
@@ -189,17 +219,13 @@ text-align:center;
     height: 100%;
     overflow:hidden;
 }
-.gallery-item .image img {
+.gallery-item .image .gallery-images {
     width:100%;
     height:100%;
     object-fit: cover;
     object-position:50% 50%;
     cursor:pointer;
     transition:.5s ease-in-out;
-}
-.gallery-item:hover .image img{
-    transform:scale(1.5);
-    // opacity:0.2;
 }
 .gallery-item .text{
     opacity:0;
@@ -266,17 +292,29 @@ text-align:center;
         grid-template-columns:repeat(2,1fr)
     }
     .w-1,.w-2,.w-3,.w-4,.w-5,.w-6 {
-        grid-column:span 1;
+        grid-column:span 2;
+    }
+    .h-1,.h-2,.h-3,.h-4,.h-5{
+        grid-row:span 2;
+    }
+}
+@media screen and (max-width:768px){
+    .container{
+        grid-template-columns:repeat(2,1fr)
+    }
+    .w-1,.w-2,.w-3,.w-4,.w-5,.w-6 {
+        grid-column:span 2;
     }
     .h-1,.h-2,.h-3,.h-4,.h-5{
         grid-row:span 2;
     }
 }
 
-/* contact */
+/* footer*/
 
+
+/* contact */
 .contact-me {
-    background-color: #0097C6;
 }
 #contact {
     display: absolute;
@@ -346,6 +384,12 @@ text-align:center;
 
 /* General */
 
+#illustration {
+    margin-top: 10em;
+}
+#design {
+    margin-top: 5em;
+}
 .flex {
     display: flex;
 }
@@ -385,6 +429,9 @@ text-align:center;
     }
     #design #illustration li {
         width: 31%;
+    }
+    .about-text p {
+        font-size: 22px;
     }
 }
 @media screen and (min-width:700px) {
@@ -439,5 +486,11 @@ text-align:center;
         width: 100%;
         display: center;
         text-align: center;
+    }
+    .about-me .about-text p {
+        font-size: 22px;
+    }
+    .about-me .bio-pic{
+        width:100%;
     }
 }

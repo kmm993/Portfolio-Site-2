@@ -1,9 +1,9 @@
-import { Component, ElementRef, HostListener, Inject, Input, OnInit, ViewChild } from '@angular/core';
-import { MatDialog, MAT_DIALOG_DATA } from '@angular/material/dialog';
+import { Component, HostListener, Inject, Input, OnInit } from '@angular/core';
+import { MAT_DIALOG_DATA, MatDialog } from '@angular/material/dialog';
 
 @Component({
   selector: 'app-preview-image',
-  templateUrl: './preview-image.component.html',
+  templateUrl: './preview-image.component.html'
 })
 export class PreviewImageComponent implements OnInit {
   @Input() image = '';
@@ -48,4 +48,5 @@ export class ModalImageDialogComponent {
 interface ImageDialogData {
   image: string;
   alt: string;
+  title?: string;
 }

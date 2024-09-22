@@ -5,6 +5,7 @@ import { AppComponent } from './app.component';
 import { PreviewImageModule } from './components/modal-image/preview-image.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MaterialModule } from './material.module';
+import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
 
 @NgModule({
   declarations: [
@@ -17,7 +18,9 @@ import { MaterialModule } from './material.module';
     PreviewImageModule,
     BrowserAnimationsModule
   ],
-  providers: [],
+  providers: [
+    provideAnimationsAsync()
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

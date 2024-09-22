@@ -1,12 +1,14 @@
 import { CommonModule } from '@angular/common';
+import { ModalImageDialogComponent, PreviewImageComponent } from './preview-image.component';
 import { NgModule } from '@angular/core';
-import { PreviewImageComponent } from './preview-image.component';
+import { MatDialogModule } from '@angular/material/dialog';
 
 @NgModule({
-  declarations: [PreviewImageComponent],
+  declarations: [PreviewImageComponent, ModalImageDialogComponent],
   imports: [
-    CommonModule
+    CommonModule,
+    MatDialogModule
   ],
-  exports: [PreviewImageComponent]
+  exports: [PreviewImageComponent, ModalImageDialogComponent]
 })
 export class PreviewImageModule { }

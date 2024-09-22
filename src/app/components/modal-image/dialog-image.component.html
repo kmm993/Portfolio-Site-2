@@ -1,8 +1,17 @@
-<div mat-dialog-content class="dialog-content">
-    <span class="close" (click)="close()">&times;</span>
+<!-- <div mat-dialog-content class="dialog-content"></div> -->
 
-    <div class="image-container">
-        <img [src]="this.data.image">
-        <span class="alt-text">{{ this.data.alt }}</span>
-    </div>
+<h2 mat-dialog-title>
+  <span class="close" (click)="close()">&times;</span>
+</h2>
+
+<div mat-dialog-content>
+  <div class="image-container">
+    <img [src]="this.data.image" />
+    <span class="alt-text">{{ this.data.alt }}</span>
+  </div>
+</div>
+
+<div mat-dialog-actions>
+  <button mat-button mat-dialog-close>Previous</button>
+  <button mat-button mat-dialog-close cdkFocusInitial>Next</button>
 </div>

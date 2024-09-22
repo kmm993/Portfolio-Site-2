@@ -1,12 +1,10 @@
 <h2 mat-dialog-title>
-  {{data.title || "Default Title"}}
-  <span class="close" (click)="close()">&times;</span>
+  {{data.alt || "Default Title"}}
 </h2>
 
 <div mat-dialog-content>
   <div class="image-container">
     <img [src]="data.image" />
-    <span class="alt-text">{{ data.alt }}</span>
   </div>
 </div>
 

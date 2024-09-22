@@ -1,9 +1,13 @@
 <header>
   <div class="nav">
-    <input type="checkbox" id="nav-check">
+    <input type="checkbox" id="nav-check" />
     <div class="nav-header">
       <div class="content-wrap">
-        <img class="logo" src="../assets/images/branding/final_personal_logo_horizontal.png" alt="">
+        <img
+          class="logo"
+          src="../assets/images/branding/final_personal_logo_horizontal.png"
+          alt=""
+        />
       </div>
     </div>
     <div class="nav-btn">
@@ -24,13 +28,59 @@
 
 <!-- Main Area -->
 <main id="main">
+  @for(portfolioSection of portfolioSections; track $index) {
+  <section [id]="portfolioSection.id" class="portfolio-body">
+    <div class="container">
+      <div
+        class="gallery-container"
+        [ngClass]="[
+          'h-' + portfolioSection.dimensions.height,
+          'w-' + portfolioSection.dimensions.width
+        ]"
+      >
+        <div class="image">
+          <img
+            class="gallery-title"
+            [src]="portfolioSection.sectonImage"
+            [alt]="portfolioSection.alt"
+          />
+        </div>
+      </div>
+
+      @for(portfolioItem of portfolioSection.portfolioItems; track $index) {
+      <div
+        class="gallery-container"
+        [ngClass]="[
+          'h-' + portfolioItem.dimensions.height,
+          'w-' + portfolioItem.dimensions.width
+        ]"
+      >
+        <div class="gallery-item">
+          <div class="image">
+            <app-preview-image
+              [image]="portfolioItem.image"
+              [alt]="portfolioItem.alt"
+            ></app-preview-image>
+          </div>
+          <div class="text">{{portfolioItem.alt}}</div>
+        </div>
+      </div>
+      }
+    </div>
+  </section>
+  }
+
   <!-- Section A -->
   <section id="design" class="portfolio-body">
     <div class="container">
       <div class="gallery-container w-2 h-3">
         <div class="gallery-item">
           <div class="image">
-            <img class="gallery-title" src="../assets/images/graphics/Design Portfolio title.png" alt="">
+            <img
+              class="gallery-title"
+              src="../assets/images/graphics/Design Portfolio title.png"
+              alt=""
+            />
           </div>
         </div>
       </div>
@@ -38,8 +88,10 @@
       <div class="gallery-container w-2 h-3">
         <div class="gallery-item">
           <div class="image">
-            <app-preview-image [image]="'../assets/images/fitness_unbound_branding.jpg'"
-              [alt]="'Fitness Unbound Logo Design'"></app-preview-image>
+            <app-preview-image
+              [image]="'../assets/images/fitness_unbound_branding.jpg'"
+              [alt]="'Fitness Unbound Logo Design'"
+            ></app-preview-image>
           </div>
           <div class="text">Fitness Unbound Logo Design</div>
         </div>
@@ -48,7 +100,10 @@
       <div class="gallery-container w-2 h-2">
         <div class="gallery-item">
           <div class="image">
-            <app-preview-image [image]="'../assets/images/brand_package.jpg'" [alt]="'Fitness Unbound Brand Package'">
+            <app-preview-image
+              [image]="'../assets/images/brand_package.jpg'"
+              [alt]="'Fitness Unbound Brand Package'"
+            >
             </app-preview-image>
           </div>
           <div class="text">Fitness Unbound Brand Package</div>
@@ -58,7 +113,10 @@
       <div class="gallery-container w-2 h-2">
         <div class="gallery-item">
           <div class="image">
-            <app-preview-image [image]="'../assets/images/AAIS Views.jpg'" [alt]="'AAIS Views Blog Site'">
+            <app-preview-image
+              [image]="'../assets/images/AAIS Views.jpg'"
+              [alt]="'AAIS Views Blog Site'"
+            >
             </app-preview-image>
           </div>
           <div class="text">AAIS Views Blog Site</div>
@@ -68,8 +126,10 @@
       <div class="gallery-container h-2 w-2">
         <div class="gallery-item">
           <div class="image">
-            <app-preview-image [image]="'../assets/images/delicate_decadence_card.jpg'"
-              [alt]="'Delicate Decadence Business Card'"></app-preview-image>
+            <app-preview-image
+              [image]="'../assets/images/delicate_decadence_card.jpg'"
+              [alt]="'Delicate Decadence Business Card'"
+            ></app-preview-image>
           </div>
           <div class="text">Delicate Decadence Business Card</div>
         </div>
@@ -78,7 +138,10 @@
       <div class="gallery-container">
         <div class="gallery-item">
           <div class="image">
-            <app-preview-image [image]="'../assets/images/vt_medic_alert_brochure.jpg'" [alt]="'VT Medic Alert Brochure'">
+            <app-preview-image
+              [image]="'../assets/images/vt_medic_alert_brochure.jpg'"
+              [alt]="'VT Medic Alert Brochure'"
+            >
             </app-preview-image>
           </div>
           <div class="text">VT Medic Alert Brochure</div>
@@ -88,7 +151,10 @@
       <div class="gallery-container">
         <div class="gallery-item">
           <div class="image">
-            <app-preview-image [image]="'../assets/images/Muse Logo display.jpg'" [alt]="'Muse Logo Design'">
+            <app-preview-image
+              [image]="'../assets/images/Muse Logo display.jpg'"
+              [alt]="'Muse Logo Design'"
+            >
             </app-preview-image>
           </div>
           <div class="text">Muse Logo Design</div>
@@ -98,8 +164,10 @@
       <div class="gallery-container w-1 h-2">
         <div class="gallery-item">
           <div class="image">
-            <app-preview-image [image]="'../assets/images/VME_Email_campaign.jpg'"
-              [alt]="'AAIS Virtual Main Event Email Campaign'"></app-preview-image>
+            <app-preview-image
+              [image]="'../assets/images/VME_Email_campaign.jpg'"
+              [alt]="'AAIS Virtual Main Event Email Campaign'"
+            ></app-preview-image>
           </div>
           <div class="text">AAIS Virtual Main Event Email Campaign</div>
         </div>
@@ -108,8 +176,10 @@
       <div class="gallery-container w-2 h-2">
         <div class="gallery-item">
           <div class="image">
-            <app-preview-image [image]="'../assets/images/cherished_moments_doula_services.jpg'"
-              [alt]="'Cherished Moments Doula Services Logo'"></app-preview-image>
+            <app-preview-image
+              [image]="'../assets/images/cherished_moments_doula_services.jpg'"
+              [alt]="'Cherished Moments Doula Services Logo'"
+            ></app-preview-image>
           </div>
           <div class="text">Cherished Moments Doula Services Logo</div>
         </div>
@@ -118,8 +188,12 @@
       <div class="gallery-container w-2 h-3">
         <div class="gallery-item">
           <div class="image">
-            <app-preview-image [image]="'../assets/images/Viewpoint-2020 Edition-Print_Page_01.jpg'"
-              [alt]="'AAIS Viewpoint Magazine 2020'"></app-preview-image>
+            <app-preview-image
+              [image]="
+                '../assets/images/Viewpoint-2020 Edition-Print_Page_01.jpg'
+              "
+              [alt]="'AAIS Viewpoint Magazine 2020'"
+            ></app-preview-image>
           </div>
           <div class="text">AAIS Viewpoint Magazine 2020</div>
         </div>
@@ -128,8 +202,10 @@
       <div class="gallery-container w-1 h-2">
         <div class="gallery-item">
           <div class="image">
-            <app-preview-image [image]="'../assets/images/bloo_eyed_spazz_branding.jpg'"
-              [alt]="'Bloo Eyed Spazz Branding'"></app-preview-image>
+            <app-preview-image
+              [image]="'../assets/images/bloo_eyed_spazz_branding.jpg'"
+              [alt]="'Bloo Eyed Spazz Branding'"
+            ></app-preview-image>
           </div>
           <div class="text">Bloo Eyed Spazz Branding</div>
         </div>
@@ -137,8 +213,12 @@
       <div class="gallery-container w-3 h-2">
         <div class="gallery-item">
           <div class="image">
-            <app-preview-image [image]="'../assets/images/Fitness Unbound-PostcardBack-20213.jpg'"
-              [alt]="'Fitness Unbound 2021 Postcard'"></app-preview-image>
+            <app-preview-image
+              [image]="
+                '../assets/images/Fitness Unbound-PostcardBack-20213.jpg'
+              "
+              [alt]="'Fitness Unbound 2021 Postcard'"
+            ></app-preview-image>
           </div>
           <div class="text">Fitness Unbound 2021 Postcard</div>
         </div>
@@ -152,7 +232,10 @@
       <div class="gallery-container w-2 h-3">
         <div class="gallery-item">
           <div class="image">
-            <img src="../assets/images/graphics/Illustration Portfolio title.png" alt="Illustration Portfolio" />
+            <img
+              src="../assets/images/graphics/Illustration Portfolio title.png"
+              alt="Illustration Portfolio"
+            />
           </div>
         </div>
       </div>
@@ -160,7 +243,10 @@
       <div class="gallery-container w-3 h-3">
         <div class="gallery-item">
           <div class="image">
-            <app-preview-image [image]="'../assets/images/illustration/Commission process.jpg'" [alt]="'Skye Commision'">
+            <app-preview-image
+              [image]="'../assets/images/illustration/Commission process.jpg'"
+              [alt]="'Skye Commision'"
+            >
             </app-preview-image>
           </div>
           <div class="text">Skye Commision</div>
@@ -170,8 +256,10 @@
       <div class="gallery-container w-2">
         <div class="gallery-item">
           <div class="image">
-            <app-preview-image [image]="'../assets/images/illustration/little_talks_cover.jpg'"
-              [alt]="'Little Talks Book Cover'"></app-preview-image>
+            <app-preview-image
+              [image]="'../assets/images/illustration/little_talks_cover.jpg'"
+              [alt]="'Little Talks Book Cover'"
+            ></app-preview-image>
           </div>
           <div class="text">Little Talks Book Cover</div>
         </div>
@@ -180,7 +268,10 @@
       <div class="gallery-container w-1 h-1">
         <div class="gallery-item">
           <div class="image">
-            <app-preview-image [image]="'../assets/images/illustration/rogue.jpg'" [alt]="'Rogue Character Commission'">
+            <app-preview-image
+              [image]="'../assets/images/illustration/rogue.jpg'"
+              [alt]="'Rogue Character Commission'"
+            >
             </app-preview-image>
           </div>
           <div class="text">Rogue Character Commission</div>
@@ -190,8 +281,10 @@
       <div class="gallery-container h-2 w-2">
         <div class="gallery-item">
           <div class="image">
-            <app-preview-image [image]="'../assets/images/illustration/strange_fellows.jpg'"
-              [alt]="'Strange Fellows Commission'"></app-preview-image>
+            <app-preview-image
+              [image]="'../assets/images/illustration/strange_fellows.jpg'"
+              [alt]="'Strange Fellows Commission'"
+            ></app-preview-image>
           </div>
           <div class="text">Strange Fellows Commission</div>
         </div>
@@ -200,8 +293,12 @@
       <div class="gallery-container h-3 w-1">
         <div class="gallery-item">
           <div class="image">
-            <app-preview-image [image]="'../assets/images/illustration/skeleton_mage_t-shirt.jpg'"
-              [alt]="'Strange Fellows Commission'"></app-preview-image>
+            <app-preview-image
+              [image]="
+                '../assets/images/illustration/skeleton_mage_t-shirt.jpg'
+              "
+              [alt]="'Strange Fellows Commission'"
+            ></app-preview-image>
           </div>
           <div class="text">D&D 214 T-shirt Design</div>
         </div>
@@ -210,8 +307,10 @@
       <div class="gallery-container h-2 w-2">
         <div class="gallery-item">
           <div class="image">
-            <app-preview-image [image]="'../assets/images/illustration/CadxBeau_complete.jpg'"
-              [alt]="'Strange Fellows Commission'"></app-preview-image>
+            <app-preview-image
+              [image]="'../assets/images/illustration/CadxBeau_complete.jpg'"
+              [alt]="'Strange Fellows Commission'"
+            ></app-preview-image>
           </div>
           <div class="text">Critical Role: Healing Hug</div>
         </div>
@@ -220,7 +319,10 @@
       <div class="gallery-container w-1 h-1">
         <div class="gallery-item">
           <div class="image">
-            <app-preview-image [image]="'../assets/images/illustration/sheepii_emotes.jpg'" [alt]="'Sheepii Emotes'">
+            <app-preview-image
+              [image]="'../assets/images/illustration/sheepii_emotes.jpg'"
+              [alt]="'Sheepii Emotes'"
+            >
             </app-preview-image>
           </div>
           <div class="text">Sheepii Emotes</div>
@@ -237,23 +339,32 @@
       </div>
       <div class="about-text">
         <h1>About Me</h1>
-        <p style="font-size: 22px;">Hi! My name is Kaylee Maclure and I'm a Graphic Designer and Illustrator originally
-          from the
-          sleepy leaf peeping state of Vermont with a taste for nerdy & creative hobbies. You want to talk horror movies
-          or have a discussion about the latest video game? I'm your person. Being a
-          creative at heart, I'm always seaking the next crafting project whether it be painting or crochet. Overall, an
-          open minded person with an interest in many things except for sports, unless we are talking esports.</p>
+        <p style="font-size: 22px">
+          Hi! My name is Kaylee Maclure and I'm a Graphic Designer and
+          Illustrator originally from the sleepy leaf peeping state of Vermont
+          with a taste for nerdy & creative hobbies. You want to talk horror
+          movies or have a discussion about the latest video game? I'm your
+          person. Being a creative at heart, I'm always seaking the next
+          crafting project whether it be painting or crochet. Overall, an open
+          minded person with an interest in many things except for sports,
+          unless we are talking esports.
+        </p>
 
-        <p style="font-size: 22px;margin-top:10px;">As for experience, I have a Bachelors in Graphic Design
-          along with 6 years of experience in the industry. I started off working as a Freelancer, then a Graphic Designer and Print Production Specialist at CW Creative,
-          to currently working as a jack-of-all-trades Graphic Designer with a not-for-profit insurance advirsory association called AAIS. My future goals
-          include gaining a firm grasp of Java Script, furthering my experience with video editing, and working my way
-          to the
-          position of Creative Director in the future. Currently I have familiarity with video production, animation,
-          HTML, CSS, and a firm understanding of UI/UX and web design. My favorite project is logo or branding design
-          where I'm able to
-          thoroughly utilize my talent for illustration. When I don't have my graphic design hat on, I'm a crafty
-          creative at heart who has a pentient for horror and comedy movies.</p>
+        <p style="font-size: 22px; margin-top: 10px">
+          As for experience, I have a Bachelors in Graphic Design along with 6
+          years of experience in the industry. I started off working as a
+          Freelancer, then a Graphic Designer and Print Production Specialist at
+          CW Creative, to currently working as a jack-of-all-trades Graphic
+          Designer with a not-for-profit insurance advirsory association called
+          AAIS. My future goals include gaining a firm grasp of Java Script,
+          furthering my experience with video editing, and working my way to the
+          position of Creative Director in the future. Currently I have
+          familiarity with video production, animation, HTML, CSS, and a firm
+          understanding of UI/UX and web design. My favorite project is logo or
+          branding design where I'm able to thoroughly utilize my talent for
+          illustration. When I don't have my graphic design hat on, I'm a crafty
+          creative at heart who has a pentient for horror and comedy movies.
+        </p>
         <h3>E-mail: kayleemaclure&#64;gmail.com</h3>
       </div>
     </div>

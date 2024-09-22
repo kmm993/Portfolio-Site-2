@@ -1,0 +1,10 @@
+.cdk-overlay-pane.mat-mdc-dialog-panel {
+    max-width: fit-content !important;
+}
+
+mat-dialog-container {
+    .mat-mdc-dialog-title {
+        display: flex;
+        align-items: center;
+    }
+}

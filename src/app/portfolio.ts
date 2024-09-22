@@ -144,8 +144,62 @@ export const PORTFOLIO_SECTIONS: PortfolioSection[] = [
         title: 'Skye Commission',
         alt: 'Skye Commission',
         dimensions: {
-          height: 3,
+          height: 2,
+          width: 1,
+        },
+      },
+      {
+        image: '../assets/images/illustration/little_talks_cover.jpg',
+        title: 'Little Talks Book Cover',
+        alt: 'Little Talks Book Cover',
+        dimensions: {
+          height: 2,
           width: 2,
+        },
+      },
+      {
+        image: '../assets/images/illustration/rogue.jpg',
+        title: 'Rogue Character Commission',
+        alt: 'Rogue Character Commission',
+        dimensions: {
+          height: 2,
+          width: 2,
+        },
+      },
+      {
+        image: '../assets/images/illustration/strange_fellows.jpg',
+        title: 'Strange Fellows Commission',
+        alt: 'Strange Fellows Commission',
+        dimensions: {
+          height: 2,
+          width: 2,
+        },
+      },
+      {
+        image: '../assets/images/illustration/skeleton_mage_t-shirt.jpg',
+        title: 'D&D 214 T-shirt Design',
+        alt: 'D&D 214 T-shirt Design',
+        dimensions: {
+          height: 2,
+          width: 2,
+        },
+      },
+      {
+        image: '../assets/images/illustration/CadxBeau_complete.jpg',
+        title: 'Critical Role: Healing Hug',
+        alt: 'Critical Role: Healing Hug',
+        dimensions: {
+          height: 2,
+          width: 2,
+        },
+      },
+      {
+        image: '../assets/images/illustration/sheepii_emotes.jpg',
+        title: 'Sheepii Emotes',
+        alt: 'Sheepii Emotes',
+        dimensions: {
+          height: 2,
+          width: 1,
         },
       },
     ],

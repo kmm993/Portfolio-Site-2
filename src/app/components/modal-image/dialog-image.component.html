@@ -9,6 +9,6 @@
 </div>
 
 <div mat-dialog-actions>
-  <button mat-button mat-dialog-close>Previous</button>
-  <button mat-button mat-dialog-close cdkFocusInitial>Next</button>
+  <button mat-button (click)="previous()">Previous</button>
+  <button mat-button cdkFocusInitial (click)="next()">Next</button>
 </div>

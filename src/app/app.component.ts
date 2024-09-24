@@ -52,7 +52,20 @@ export class AppComponent {
     this.dialogImageService.$prevImage
     .pipe(takeUntilDestroyed())
     .subscribe(() => {
-      console.log('Previous Image');
+      const beginningOfSection = this.currentImageIndex === 0;
+      const beginningOfFirstSection = this.currentSectionIndex === 0;
+
+      if (beginningOfSection && beginningOfFirstSection) {
+        this.updateCurrentImageIndex(this.portfolioSections.length - 1, this.portfolioSections[this.portfolioSections.length - 1].portfolioItems.length - 1);
+      } else if (beginningOfSection) {
+        this.updateCurrentImageIndex(this.currentSectionIndex - 1, this.portfolioSections[this.currentSectionIndex - 1].portfolioItems.length - 1);
+      } else {
+        this.updateCurrentImageIndex(this.currentSectionIndex, this.currentImageIndex - 1);
+      }
+
+      this.dialogImageService.$loadImage.next(
+        this.portfolioSections[this.currentSectionIndex].portfolioItems[this.currentImageIndex - 1]
+      );
     })
   }
 }

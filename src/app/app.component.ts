@@ -43,7 +43,7 @@ export class AppComponent {
       }
 
       this.dialogImageService.$loadImage.next(
-        this.portfolioSections[this.currentSectionIndex].portfolioItems[this.currentImageIndex + 1]
+        this.portfolioSections[this.currentSectionIndex].portfolioItems[this.currentImageIndex]
       );
     })
   }
@@ -64,7 +64,7 @@ export class AppComponent {
       }
 
       this.dialogImageService.$loadImage.next(
-        this.portfolioSections[this.currentSectionIndex].portfolioItems[this.currentImageIndex - 1]
+        this.portfolioSections[this.currentSectionIndex].portfolioItems[this.currentImageIndex]
       );
     })
   }

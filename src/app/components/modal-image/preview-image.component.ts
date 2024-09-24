@@ -1,4 +1,4 @@
-import { Component, HostListener, Inject, Input, OnInit } from '@angular/core';
+import { Component, ElementRef, HostListener, Inject, Input, OnInit, ViewChild } from '@angular/core';
 import { MAT_DIALOG_DATA, MatDialog } from '@angular/material/dialog';
 import { ImageDialogData } from './dialog-image.i';
 import { DialogImageService } from './dialog-image.service';
@@ -38,6 +38,8 @@ export class PreviewImageComponent implements OnInit {
   styleUrls: ['./dialog-image.component.scss']
 })
 export class ModalImageDialogComponent {
+  @ViewChild('dialogBody') dialogBody: ElementRef<HTMLElement>;
+
   constructor(
     private dialog: MatDialog,
     private dialogImageService: DialogImageService,
@@ -52,9 +54,9 @@ export class ModalImageDialogComponent {
     } else if (event.key === 'ArrowLeft') {
       this.previous();
     } else if (event.key === 'ArrowDown') {
-      // TODO: Scroll down in the dialog body by 5px per event trigger
+      this.dialogBody.nativeElement.scrollBy(0, 10);
     } else if (event.key === 'ArrowUp') {
-      // TODO: Scroll up in the dialog body by 5px per event trigger
+      this.dialogBody.nativeElement.scrollBy(0, -10);
     }
   }
 

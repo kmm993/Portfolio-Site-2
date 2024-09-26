@@ -6,5 +6,10 @@ mat-dialog-container {
     .mat-mdc-dialog-title {
         display: flex;
         align-items: center;
+        margin: 0;
+    }
+
+    .mat-mdc-dialog-content {
+        max-height: 100%;
     }
 }

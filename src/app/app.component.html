@@ -28,7 +28,7 @@
 
 <!-- Main Area -->
 <main id="main">
-  @for(portfolioSection of portfolioSections; track $index) {
+  @for(portfolioSection of portfolioSections; let portfolioSectionIndex = $index; track portfolioSectionIndex) {
   <section [id]="portfolioSection.id" class="portfolio-body">
     <div class="container">
       <div
@@ -47,7 +47,7 @@
         </div>
       </div>
 
-      @for(portfolioItem of portfolioSection.portfolioItems; track $index) {
+      @for(portfolioItem of portfolioSection.portfolioItems; let portfolioItemIndex = $index; track portfolioItemIndex) {
       <div
         class="gallery-container"
         [ngClass]="[
@@ -60,6 +60,7 @@
             <app-preview-image
               [image]="portfolioItem.image"
               [alt]="portfolioItem.alt"
+              (click)="updateCurrentImageIndex(portfolioSectionIndex, portfolioItemIndex)"
             ></app-preview-image>
           </div>
           <div class="text">{{portfolioItem.alt}}</div>
